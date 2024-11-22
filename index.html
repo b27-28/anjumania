@@ -1,53 +1,18 @@
-<table class="iksweb">
-	<tbody>
-		<tr>
-			<td>Дата</td>
-			<td>Толян (Lvl 1)</td>
-			<td>Бен (Lvl 1)</td>
-		</tr>
-		<tr>
-			<td>20.11.2024</td>
-			<td>50</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>21.11.2024</td>
-			<td>100</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>22.11.2024</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</tbody>
-</table>
-<style>
+<label class='name'> Толян </label>
+<label class='level'> Уровень 1</label>
+<label class='OO'> Очки обучения 10</label>
+<label class='prog'> 100/150</label>
+<progress class='prog' max="150" value="100"></progress>
+<label> ------- </label>
+<label class='name'> Бен </label>
+<label class='level'> Уровень 1</label>
+<label class='OO'> Очки обучения 10</label>
+<label class='prog'> 100/150</label>
+<progress class='prog' max="150" value="100"></progress>
 
-	table.iksweb{
-	width: 100%;
-	border-collapse:collapse;
-	border-spacing:0;
-	height: auto;
-	font-size: 3vh;
+<style>
+html, body{display:flex;justify-content:left;align-items:left;width:100%;font-size:2vh;flex-direction: column;
 }
-table.iksweb,table.iksweb td, table.iksweb th {
-	border: 1px solid #595959;
-}
-table.iksweb td,table.iksweb th {
-	padding: 3px;
-	width: 30px;
-	height: 35px;
-}
-table.iksweb th {
-	background: #347c99; 
-	color: #fff; 
-	font-weight: normal;
-	font-size: 2vh;
-}
+.prog{width:50%;}
 </style>
+
