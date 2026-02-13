@@ -1,18 +1,29 @@
-<label class='name'> Толян (Свиноногий Бандикут) </label>
-<label class='level'> Уровень 8</label>
-<label class='OO'> Очки обучения 80</label>
-<label class='prog'>1900/2250</label>
-<progress class='prog' max="2250" value="1900"></progress>
-<label> ------- </label>
-<label class='name'> Бен(Мухожук красивый) </label>
-<label class='level'> Уровень 8</label>
-<label class='OO'> Очки обучения  80</label>
-<label class='prog'> 1250/2250</label>
-<progress class='prog' max="2250" value="1100"></progress>
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+<input class=input id=firstlink></input>
+</br>
+<button id=but>Получить ссылку для сбп</button>
+</br>
+</br>
+<span id=readylink></span>
+</html>
 
-<style>
-html, body{display:flex;justify-content:left;align-items:left;width:100%;font-size:2.5vh;flex-direction: column;
-}
-.prog{width:70%;}
-</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+alert(1);
+//var moo = "https://www.tbank.ru/mybank/payments/qr-pay/AD10004KRTE93MF88TKBFJTSRBMPI43U/?type=02&bank=100000000004&sum=5000&cur=RUB&crc=89D2";
 
+$('#but').on( "click", function() {
+    var moo=$('#firstlink').val();
+    moo=moo.match(/qr-pay([^ ]*)/)[1];
+    var thelink="https://qr.nspk.ru"+moo;
+    thelink=thelink.replace("/?",'?');
+    $('#readylink').text(thelink);
+    //alert(thelink);
+} );
+
+</script>
