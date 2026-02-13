@@ -24,7 +24,7 @@ $('#but').on( "click", function() {
     moo=moo.match(/qr-pay([^ ]*)/)[1];
     var thelink="https://qr.nspk.ru"+moo;
     thelink=thelink.replace("/?",'?');
-    $('#readylink').text(thelink);
+    //$('#readylink').text(thelink);
     alert(thelink);
 } );
 
