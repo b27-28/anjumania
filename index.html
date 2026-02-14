@@ -9,11 +9,12 @@
 <button id=but>Получить ссылку для сбп</button>
 </br>
 </br>
-<href id=readylink></href>
+<a href="" id=readylink></a>
 </html>
 <style>
  .input{height:20%;width:40%;position:absolute;top:3%;left:20%;font-size:3vw;word-break: break-word;}
  #but{position:absolute;top:25%;font-size:5vw;}
+ #readylink{position:absolute;top:40%;font-size:5vw;}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -24,8 +25,9 @@ $('#but').on( "click", function() {
     moo=moo.match(/qr-pay([^ ]*)/)[1];
     var thelink="https://qr.nspk.ru"+moo;
     thelink=thelink.replace("/?",'?');
-    $('#readylink').text(thelink);
-    alert(thelink);
+    $('#readylink').text("Ссылка");
+    $('#readylink').attr('href', thelink);
+    //alert(thelink);
 } );
 
 </script>
