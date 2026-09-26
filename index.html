@@ -1,33 +1,51 @@
-<!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-<textarea class=input id=firstlink></textarea>
-</br>
-<button id=but>Получить ссылку для сбп</button>
-</br>
-</br>
-<a href="" id=readylink></a>
+<html>
+<meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </html>
-<style>
- .input{height:20%;width:40%;position:absolute;top:3%;left:20%;font-size:3vw;word-break: break-word;}
- #but{position:absolute;top:25%;font-size:5vw;}
- #readylink{position:absolute;top:40%;font-size:5vw;}
-</style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+<script src='/src.js'></script>
+<script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+
+
 <script>
-//var moo = "https://www.tbank.ru/mybank/payments/qr-pay/AD10004KRTE93MF88TKBFJTSRBMPI43U/?type=02&bank=100000000004&sum=5000&cur=RUB&crc=89D2";
+  // Инициализируем WebApp
+  const tg = window.Telegram.WebApp;
+  // Получаем ID пользователя
+  if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+    const userId = tg.initDataUnsafe.user.id;
+    alert("User ID в Mini App:", userId);
+  } else {
+    alert("Приложение открыто не в Telegram");
+  }
+const data = $a;
+function buildTable(data) {
+  const table = document.createElement('table');
+  const thead = document.createElement('thead');
+  const tbody = document.createElement('tbody');
 
-$('#but').on( "click", function() {
-    var moo=$('#firstlink').val();
-    moo=moo.match(/qr-pay([^ ]*)/)[1];
-    var thelink="https://qr.nspk.ru"+moo;
-    thelink=thelink.replace("/?",'?');
-    $('#readylink').text("Ссылка");
-    $('#readylink').attr('href', thelink);
-    //alert(thelink);
-} );
+  // Создаём строку заголовков
+  const headerRow = document.createElement('tr');
+  ['Дата начисления', 'Сумма бонуса'].forEach(text => {
+    const th = document.createElement('th');
+    th.textContent = text;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
 
+  // Заполняем данные
+  data.forEach(item => {
+    const tr = document.createElement('tr');
+    const tdName = document.createElement('td');
+    tdName.textContent = item.date;
+    tr.appendChild(tdName);
+    const tdAge = document.createElement('td');
+    tdAge.textContent = item.bonus+'.руб';
+    tr.appendChild(tdAge);
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  document.body.appendChild(table);
+}
+
+buildTable(data);
 </script>
