@@ -35,7 +35,7 @@ function buildTable(data) {
 
   // Заполняем данные
   data.forEach(item => {
-    if (item.user==${userId}){
+    if (item.user==userId){
     const tr = document.createElement('tr');
     const tdName = document.createElement('td');
     tdName.textContent = item.date;
