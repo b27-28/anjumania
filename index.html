@@ -17,8 +17,7 @@ if (userId) {
 } else {
     alert("Данные пользователя недоступны (приложение запущено вне Telegram)");
 }*/
-  $ss=334410653;
-const data = $u+$ss;
+const data = database;
 function buildTable(data) {
   const table = document.createElement('table');
   const thead = document.createElement('thead');
@@ -36,6 +35,7 @@ function buildTable(data) {
 
   // Заполняем данные
   data.forEach(item => {
+    if (item.user==${userId})
     const tr = document.createElement('tr');
     const tdName = document.createElement('td');
     tdName.textContent = item.date;
@@ -44,6 +44,7 @@ function buildTable(data) {
     tdAge.textContent = item.bonus+'.руб';
     tr.appendChild(tdAge);
     tbody.appendChild(tr);
+}
   });
   table.appendChild(tbody);
   document.body.appendChild(table);
