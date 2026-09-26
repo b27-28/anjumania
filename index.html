@@ -46,6 +46,9 @@ function buildTable(data) {
     const tdName = document.createElement('td');
     tdName.textContent = item.date;
     tr.appendChild(tdName);
+    const tdOper = document.createElement('td');
+    tdOper.textContent = item.oper;
+    tr.appendChild(tdOper); 
     const tdAge = document.createElement('td');
     tdAge.textContent = item.bonus+'.руб';
     tr.appendChild(tdAge);
