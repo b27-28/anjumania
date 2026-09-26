@@ -4,7 +4,9 @@
 </html>
 
 <style>
-  td,tr{font-size:3vh;}
+  table{width:100%;}
+  th,td,tr{font-size:1.5vh;border:1px solid gray;}
+  td{padding-left:10px;}
 </style>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
@@ -29,7 +31,7 @@ function buildTable(data) {
 
   // Создаём строку заголовков
   const headerRow = document.createElement('tr');
-  ['Дата начисления', 'Сумма бонуса'].forEach(text => {
+  ['Дата начисления','Операция','Сумма бонуса'].forEach(text => {
     const th = document.createElement('th');
     th.textContent = text;
     headerRow.appendChild(th);
