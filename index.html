@@ -10,12 +10,13 @@
   // Инициализируем WebApp
   const tg = window.Telegram.WebApp;
   // Получаем ID пользователя
-  if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
-    const userId = tg.initDataUnsafe.user.id;
-    alert("User ID в Mini App:", userId);
-  } else {
-    alert("Приложение открыто не в Telegram");
-  }
+const userId = tg.initDataUnsafe?.user?.id;
+
+if (userId) {
+    alert(`Telegram ID пользователя: ${userId}`);
+} else {
+    alert("Данные пользователя недоступны (приложение запущено вне Telegram)");
+}
 const data = $a;
 function buildTable(data) {
   const table = document.createElement('table');
