@@ -8,7 +8,7 @@
   table{width:100%;}
   th,td,tr{font-size:1.5vh;border:1px solid gray;}
   .prom,td{padding-left:10px;}
-  .prom{font-size:1.5vh}
+  .prom,.bal{font-size:1.8vh}
 </style>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
@@ -38,7 +38,7 @@ table();
   agents.forEach(item => {
     if (item.id==userId){
     $('#head').append('<label class=prom>Ваш промокод: '+item.promo+'</label>');
-    $('#head').append('<label class=prom>Баланс: '+item.id+'</label>');
+    $('#head').append('<label class=bal>Баланс: '+item.id+'</label>');
     }
   });
 
