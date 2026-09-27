@@ -28,7 +28,7 @@ if (userId) {
 const agdb = agents;
 if (agdb.some(valid=> valid.id==userId)){
 table();
-}else {alert ('Ваш код для регистрации:');}
+}else {alert ('Ваш код для регистрации:'+userId);}
 
 function table() {  
 const data = database;
