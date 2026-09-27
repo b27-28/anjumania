@@ -33,8 +33,7 @@ table();
 }else {alert ('Ваш код для регистрации:'+userId);}
 
   
-const div = document.createElement('div');
-div.textContent = 'Ваш промокод ';
+$('html').prepend('<label class=prom>Ваш промокод:</label>');
 
   
 function table() {  
