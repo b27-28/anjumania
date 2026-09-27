@@ -11,6 +11,7 @@
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
 <script src='src.js'></script>
+<script src='ags.js'></script>
 <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
 <script>
   // Инициализируем WebApp
@@ -23,6 +24,11 @@ if (userId) {
 } else {
     alert("Данные пользователя недоступны (приложение запущено вне Telegram)");
 }
+
+const agdb = agg;
+console.log(agdb.some(valid=> valid.id=='31240'));
+
+function table() {  
 const data = database;
 function buildTable(data) {
   const table = document.createElement('table');
@@ -60,4 +66,5 @@ function buildTable(data) {
 }
 
 buildTable(data);
+}
 </script>
