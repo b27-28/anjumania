@@ -25,11 +25,18 @@ if (userId) {
     alert("Данные пользователя недоступны (приложение запущено вне Telegram)");
 }
 
+
+  
 const agdb = agents;
 if (agdb.some(valid=> valid.id==userId)){
 table();
 }else {alert ('Ваш код для регистрации:'+userId);}
 
+  
+const div = document.createElement('div');
+div.textContent = 'Ваш промокод ';
+
+  
 function table() {  
 const data = database;
 function buildTable(data) {
