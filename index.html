@@ -6,7 +6,7 @@
 <style>
   table{width:100%;}
   th,td,tr{font-size:1.5vh;border:1px solid gray;}
-  td{padding-left:10px;}
+  .promo,td{padding-left:10px;}
 </style>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
@@ -33,7 +33,11 @@ table();
 }else {alert ('Ваш код для регистрации:'+userId);}
 
   
-$('html').prepend('<label class=prom>Ваш промокод:</label>');
+  agents.forEach(item => {
+    if (item.id==userId){
+    $('html').prepend('<label class=prom>Ваш промокод: '+item.promo+'</label>');
+    }
+  });
 
   
 function table() {  
