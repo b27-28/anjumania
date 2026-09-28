@@ -52,7 +52,7 @@ function buildTable(data) {
 
   // Создаём строку заголовков
   const headerRow = document.createElement('tr');
-  ['Дата начисления','Операция','Сумма бонуса'].forEach(text => {
+  ['Дата начисления','Операция','Сумма'].forEach(text => {
     const th = document.createElement('th');
     th.textContent = text;
     headerRow.appendChild(th);
