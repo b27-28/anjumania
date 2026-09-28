@@ -39,7 +39,7 @@ table();
   agents.forEach(item => {
     if (item.id==userId){
     $('#head').append('<label class=prom>Ваш промокод: '+item.promo+'</label>');
-    calc(database)
+    calc(database);
     $('#head').append('<label class=bal>Баланс: '+sum+'</label>');
     }
   });
