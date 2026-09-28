@@ -17,6 +17,7 @@
 <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
 <script>
   let sum=0;
+  const spdf=database;
   // Инициализируем WebApp
   const tg = window.Telegram.WebApp;
   // Получаем ID пользователя
@@ -39,7 +40,7 @@ table();
   agents.forEach(item => {
     if (item.id==userId){
     $('#head').append('<label class=prom>Ваш промокод: '+item.promo+'</label>');
-    calc(database);
+    calc(spdf);
     $('#head').append('<label class=bal>Баланс: '+sum+'</label>');
     }
   });
@@ -81,14 +82,15 @@ function buildTable(data) {
   table.appendChild(tbody);
   document.body.appendChild(table);
 }
-function calc(database){
-database.forEach(item => {
+
+buildTable(data);
+}
+function calc(spdf){
+spdf.forEach(item => {
     if (item.user==userId){
      if (item.oper=='Начисление'){sum+=item.bonus}
      if (item.oper=='Списание'){sum-=item.bonus}
     }
   });
-}
-buildTable(data);
-}
+}  
 </script>
